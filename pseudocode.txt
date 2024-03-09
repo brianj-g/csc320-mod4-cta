@@ -1,0 +1,42 @@
+// Purpose: Use a while loop to gather five floating point values from a user, ensuring the loop terminates successfully. 
+// Then, print the total, average, maximum, minimum, and interest on the total at 20%.
+
+// Variables
+Floating Point:
+   userInput
+   runningTotal = 0 // initialize at zero
+   inputMax
+   inputMin
+Integer:
+   inputCounter = 0 // initialize at zero
+   MAX_LOOP
+
+// Establish the desired number of inputs
+SET MAX_LOOP = 5
+
+// Prompt the user for a decimal input. Add this to the running total.
+WHILE userInputCounter < MAX_LOOP:
+   PROMPT "Please enter a number in decimal format: "
+   SET userInput = INPUT()
+
+   SET runningTotal = runningTotal + userInput
+   
+   if inputCounter EQUALS 0:
+      SET inputMin = inputMax = userInput
+   else:
+      if userInput > inputMax:
+         SET inputMax = userInput
+      
+      if userInput < inputMin:
+         SET inputMin = userInput
+   
+   SET inputCounter = inputCounter + 1
+   
+// Loop ends after <MAX_LOOP> cycles
+
+OUTPUT "Total: " + runningTotal
+OUTPUT "Average: " + (runningTotal / MAX_LOOP)
+OUTPUT "Maximum: " + inputMax
+OUTPUT "Minimum: " + inputMin
+OUTPUT "Interest on total at 20%: " + (runningTotal * 0.20)
+
