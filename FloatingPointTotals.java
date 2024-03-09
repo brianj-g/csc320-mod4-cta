@@ -34,11 +34,12 @@ public class FloatingPointTotals {
            
       }
       
-      System.out.printf("Total: %f\n", runningTotal);
+      // Outputs are formatted to two decimal places under the assumption that the numbers entered are dollar amounts.
+      System.out.printf("Total: %.2f\n", runningTotal);
       System.out.printf("Average: %.2f\n", runningTotal / MAX_LOOP);
-      System.out.printf("Minimum: %f\n", inputMin);
-      System.out.printf("Maximum: %f\n", inputMax);
-      System.out.printf("Simple interest on total at 20%: %.2f\n", runningTotal * 0.2);
+      System.out.printf("Minimum: %.2f\n", inputMin);
+      System.out.printf("Maximum: %.2f\n", inputMax);
+      System.out.printf("Simple interest on total at 20%%: %.2f\n", runningTotal * 0.2);
    }
 
 }
