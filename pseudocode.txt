@@ -4,11 +4,13 @@
 // Variables
 Floating Point:
    userInput
-   runningTotal = 0 // initialize at zero
+   // initialize running total at zero
+   runningTotal = 0 
    inputMax
    inputMin
 Integer:
-   inputCounter = 0 // initialize at zero
+   // initialize loop counter at zero
+   inputCounter = 0 
    MAX_LOOP
 
 // Establish the desired number of inputs
@@ -17,7 +19,9 @@ SET MAX_LOOP = 5
 // Prompt the user for a decimal input. Add this to the running total.
 WHILE userInputCounter < MAX_LOOP:
    PROMPT "Please enter a number in decimal format: "
-   SET userInput = INPUT_NEXT_DOUBLE()  // Validate that input is floating point, and throw exception if not
+   
+   // Validate that input is floating point, and throw exception if not
+   SET userInput = INPUT_NEXT_DOUBLE()  
 
    SET runningTotal = runningTotal + userInput
    
