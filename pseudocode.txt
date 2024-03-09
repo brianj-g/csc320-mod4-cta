@@ -1,46 +1,45 @@
 // Purpose: Use a while loop to gather five floating point values from a user, ensuring the loop terminates successfully. 
 // Then, print the total, average, maximum, minimum, and interest on the total at 20%.
 
-// Variables
-Floating Point:
-   userInput
-   // initialize running total at zero
-   runningTotal = 0 
-   inputMax
-   inputMin
-Integer:
-   // initialize loop counter at zero
-   inputCounter = 0 
-   MAX_LOOP
-
-// Establish the desired number of inputs
-SET MAX_LOOP = 5
-
-// Prompt the user for a decimal input. Add this to the running total.
-WHILE userInputCounter < MAX_LOOP:
-   PROMPT "Please enter a number in decimal format: "
-   
-   // Validate that input is floating point, and throw exception if not
-   SET userInput = INPUT_NEXT_DOUBLE()  
-
-   SET runningTotal = runningTotal + userInput
-   
-   if inputCounter EQUALS 0:
-      SET inputMin = inputMax = userInput
-   else:
-      if userInput > inputMax:
-         SET inputMax = userInput
+// Section 1: Variables
+   Floating Point:
+      userInput
+      inputMax
+      inputMin
+      // initialize running total at zero
+      runningTotal = 0 
       
-      if userInput < inputMin:
-         SET inputMin = userInput
-   
-   SET inputCounter = inputCounter + 1
-   
-// Loop ends after <MAX_LOOP> cycles
+   Integer:
+      // initialize loop counter at zero
+      inputCounter = 0 
+      
+      // Establish the desired number of inputs
+      MAX_LOOP = 5
 
-OUTPUT "Total: " + runningTotal
-OUTPUT "Average: " + (runningTotal / MAX_LOOP)
-OUTPUT "Maximum: " + inputMax
-OUTPUT "Minimum: " + inputMin
-OUTPUT "Interest on total at 20%: " + (runningTotal * 0.20)
+// Section 2: Input & logic loop
+   WHILE userInputCounter < MAX_LOOP:
+      PROMPT "Please enter a number in decimal format: "
+      
+      // Validate that input is floating point, and throw exception if not
+      SET userInput = INPUT_NEXT_DOUBLE()  
+   
+      SET runningTotal = runningTotal + userInput
+      
+      IF inputCounter EQUALS 0:
+         SET inputMin = inputMax = userInput
+      ELSE:
+         IF userInput > inputMax:
+            SET inputMax = userInput
+         
+         IF userInput < inputMin:
+            SET inputMin = userInput
+      
+      SET inputCounter = inputCounter + 1
+
+// Section 3: Output
+   OUTPUT "Total: " + runningTotal
+   OUTPUT "Average: " + (runningTotal / MAX_LOOP)
+   OUTPUT "Maximum: " + inputMax
+   OUTPUT "Minimum: " + inputMin
+   OUTPUT "Interest on total at 20%: " + (runningTotal * 0.20)
 

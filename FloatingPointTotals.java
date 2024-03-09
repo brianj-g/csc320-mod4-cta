@@ -38,7 +38,11 @@ public class FloatingPointTotals {
           * On the first loop, the min/max variables must both be set to userInput to establish baseline.
           * In subsequent loops, conditional checks are used to determine min/max values.
           */
-         if (inputCounter > 0) {
+         if (inputCounter == 0) {
+            inputMin = userInput;
+            inputMax = userInput;
+         }
+         else {
             if (userInput < inputMin) {
                inputMin = userInput;
             }
@@ -46,10 +50,6 @@ public class FloatingPointTotals {
             if (userInput > inputMax) {
                inputMax = userInput;
             }
-         }
-         else {
-            inputMin = userInput;
-            inputMax = userInput;
          }
          
          inputCounter++;
