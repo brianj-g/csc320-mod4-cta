@@ -4,7 +4,7 @@
  * Then, print the total, average, maximum, minimum, and interest on the total at 20%.
  */
 
-package cta;
+//package cta;
 import java.util.Scanner;
 
 public class FloatingPointTotals {
