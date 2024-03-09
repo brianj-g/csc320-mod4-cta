@@ -17,7 +17,7 @@ SET MAX_LOOP = 5
 // Prompt the user for a decimal input. Add this to the running total.
 WHILE userInputCounter < MAX_LOOP:
    PROMPT "Please enter a number in decimal format: "
-   SET userInput = INPUT()
+   SET userInput = INPUT_NEXT_DOUBLE()  // Validate that input is floating point, and throw exception if not
 
    SET runningTotal = runningTotal + userInput
    
