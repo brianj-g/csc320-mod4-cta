@@ -22,13 +22,16 @@ public class FloatingPointTotals {
          userInput = s.nextDouble();
          runningTotal += userInput;
          
-            if (userInput < inputMin) {
-               inputMin = userInput;
-            }
-            
-            if (userInput > inputMax) {
-               inputMax = userInput;
-            }
+         if (userInput < inputMin) {
+            inputMin = userInput;
+         }
+         
+         if (userInput > inputMax) {
+            inputMax = userInput;
+         }
+         
+         inputCounter++;
+           
       }
       
       System.out.printf("Total: %f\n", runningTotal);
